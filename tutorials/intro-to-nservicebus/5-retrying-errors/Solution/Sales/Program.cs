@@ -20,8 +20,6 @@ namespace Sales
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
 
             endpointConfiguration.UseSerialization<JsonSerializer>();
-            endpointConfiguration.UsePersistence<InMemoryPersistence>();
-            endpointConfiguration.EnableInstallers();
 
             var recoverability = endpointConfiguration.Recoverability();
             recoverability.Immediate(

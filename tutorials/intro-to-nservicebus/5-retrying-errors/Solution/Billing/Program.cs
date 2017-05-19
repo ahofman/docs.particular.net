@@ -19,11 +19,7 @@ namespace Billing
 
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
 
-            var routing = transport.Routing();
-
             endpointConfiguration.UseSerialization<JsonSerializer>();
-            endpointConfiguration.UsePersistence<InMemoryPersistence>();
-            endpointConfiguration.EnableInstallers();
 
             var endpointInstance = await Endpoint.Start(endpointConfiguration)
                 .ConfigureAwait(false);
